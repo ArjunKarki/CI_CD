@@ -15,7 +15,11 @@ const HomeScreen = () => {
       <FlatList
         data={data?.continents || []}
         renderItem={({ item }) => {
-          return <Text>{item.name}</Text>;
+          return (
+            <Text style={{ marginHorizontal: 20, marginTop: 20 }}>
+              {item.name}
+            </Text>
+          );
         }}
         keyExtractor={(item, index) => index}
       />
