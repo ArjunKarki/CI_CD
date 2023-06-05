@@ -5,7 +5,6 @@ import { CONTENT_QUERY } from "./Query";
 
 const HomeScreen = () => {
   const { data, loading } = useQuery(CONTENT_QUERY);
-  console.log(data, loading);
 
   if (loading) {
     return <Text>fetching data....</Text>;
@@ -16,7 +15,6 @@ const HomeScreen = () => {
       <FlatList
         data={data?.continents || []}
         renderItem={({ item }) => {
-          console.log(item);
           return <Text>{item.name}</Text>;
         }}
         keyExtractor={(item, index) => index}
